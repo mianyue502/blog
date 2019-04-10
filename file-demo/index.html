@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>旋转压缩上传图片</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <style>
+            .file-box {
+                box-sizing: border-box;
+                width: 210px;
+                height: 138px;
+                border: 1px dashed #EAEBEF;
+                margin: 0 auto;
+                position: relative;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                text-align: center;
+                line-height: 138px;
+                font-size: 30px;
+                color: #666;
+            }
+            input {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
+        </style>
+        <script src="./orientation.js"></script>
+        <script src="./compress.js"></script>
+    </head>
+    <body>
+        <div class="file-box">
+            <span>+</span>
+            <input type="file" accept="image/*" capture="camera" id="input">
+        </div>
+        <script>
+            const box = document.querySelector('.file-box');
+            const el = document.querySelector('#input');
+            el.onchange = () => {
+                const file = el.files[0];
+                console.log('file', file);
+                uploadImg(file)
+            }
+
+            function uploadImg(file){
+                compressImg(file, 0.8, (err, result, dataURI) => {
+                    console.log('result', result); // blob文件用于上传
+                    console.log('dataURI', dataURI); // dataUrl文件用于本地显示
+                    box.style.backgroundImage = "url(" + dataURI + ")";
+                    document.querySelector('span').style.display = 'none';
+
+                    const formData = new FormData();
+                    formData.append('file', result);
+                    // 调图片上传接口，传入参数formData
+                })
+            }
+        </script>
+    </body>
+</html>
