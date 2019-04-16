@@ -215,7 +215,7 @@ function atwho(){
               render_view('');
               return;
             }
-            $.get('/proxy/tribe/search/search_user', { q: query, type: 'all' }, function (data) {
+            $.get('/proxy/search_user', { q: query, type: 'all' }, function (data) {
               names = JSON.parse(data).data.items;
               render_view(names);
             });
