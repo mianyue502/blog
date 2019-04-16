@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.features {
+    margin-left: 50px;
+    margin-top: 50px;
+    color: #252931;
+    line-height: 26px;
+}
+.features h2 {
+    margin-bottom: 10px;
+}
+.features h3 {
+    margin-bottom: 10px;
+}
+
+.container {
+    display: inline-block;
+    width: calc(100% - 44px);
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 500px;
+}
+
+.input-box {
+    width: 100%;
+    border: 1px solid #ebecf0;
+    position: relative;
+}
+.input-box.input-focus {
+    border: 1px solid #4B5FE1;
+}
+.input-box.placeholder-show #content::before {
+    position: absolute;
+    content: attr(data-placeholder);
+    color: #969696;
+    cursor: text;
+    pointer-events: none;
+}
+.input-content {
+    width: 100%;
+    /* padding: 3px 8px; */
+}
+#content {
+    width: 100%;
+    min-height: 130px;
+    max-height: 350px;
+    padding: 4px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    outline: none;
+    overflow: auto;
+}
+.input-counter {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: #999;
+    font-size: 13px;
+}
+
+#content .fr-emoticon {
+    font-weight: normal;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    display: inline;
+    line-height: 0;
+    font-size: 16px;
+    padding: 0;
+}
+
+.actions {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.add-emoticons {
+    position: relative;
+}
+.add-emoticons .emoticons-icon {
+    width: 20px;
+    float: left;
+    margin-top: 6px;
+}
+
+.actions .submit {
+    /* display: inline-block; */
+    float: right;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    outline: none;
+    background-color: #4B5FE1;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+}
+
+.emoticons-box {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 #ebecf0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 32px;
+    display: none;
+}
+.emoticons-box .fr-emoticon {
+    display: inline-block;
+    font-size: 20px;
+    width: 20px;
+    padding: 5px;
+    line-height: 1;
+    cursor: default;
+    font-weight: 400;
+    font-family: "Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Segoe UI Symbol","Android Emoji",EmojiSymbols;
+    box-sizing: content-box;
+    outline: none;
+}
+.emoticons-box span.fr-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}

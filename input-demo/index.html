@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>自定义内容输入框</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="atwho.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="features">
+          <h2>自定义内容输入框</h2>
+          <p>1. 高度自适应</p>
+          <p>2. focus高亮</p>
+          <p>3. placeholder</p>
+          <p>4. 显示字数，并限制输入字数长度(中文输入字数限制暂时无效)</p>
+          <p>5. 输入表情</p>
+          <p>6. @人，并根据输入关键字远程搜索</p>
+          <p>7. 粘贴过滤去除标签(纯文本)</p>
+        </div>
+        <div class="container">
+          <div class="input-box placeholder-show">
+            <div class="input-content">
+              <div id="content"  contenteditable="true" data-placeholder="输入内容" data-maxlength="300"></div>
+            </div>
+            <div class=input-counter><span>0</span>/<span>0</span></div>
+          </div>
+          <div class="actions">
+            <div class="add-emoticons">
+              <img class="emoticons-icon" src="./smile.png" alt="" onclick="openEmoticons()">
+              <div class="emoticons-box">
+                  <div id="emoticons"></div>
+                </div>
+            </div>
+            <button class="submit" onclick="publish()">发布</button>
+          </div>
+        </div>
+        <script src="jquery.min.js"></script>
+        <script src="atwho.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
